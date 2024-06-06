@@ -10,3 +10,12 @@ h4{
     text-align: center;
     justify-content: center;
 }
+#title {
+    background-color: rgb(8, 79, 145);
+    color: white;
+}
+
+.row {
+    background-color: rgb(185, 62, 62);
+    color: black;
+}

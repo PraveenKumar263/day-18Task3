@@ -19,7 +19,7 @@ async function getIPAddress() {
 
 async function getWeatherData(lon, lat) {
     try {
-        const response = await fetch(`http://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`);
+        const response = await fetch(`https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`);
         const data = await response.json();
         return data;
     } 
@@ -36,6 +36,8 @@ function formatDate(dateString) {
     const day = dateString.substring(6, 8);
     return `${day}/${month}/${year}`;
 }
+
+
 
 function createFooter() {
     const footer = document.createElement("footer");
@@ -122,9 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
         lon = ipInfo.lon;
         country = ipInfo.country;
         city = ipInfo.city;
-        title = createDivElement("title col-md-12");
+        title = createDivElement("title col-md-12 mb-2");
         title.innerHTML = `<h4>Weather Information: ${country}, ${city}</h4>`;
-
+        title.id = "title";
         row.appendChild(title);
         displayWeatherInfo();
     });
