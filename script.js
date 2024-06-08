@@ -18,7 +18,7 @@ async function getIPAddress() {
 }
 
 async function getWeatherData(lon, lat) {
-    try {
+    try { 
         const response = await fetch(`https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`);
         const data = await response.json();
         return data;
